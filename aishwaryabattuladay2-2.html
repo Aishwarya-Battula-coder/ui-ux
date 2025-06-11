@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <body style="background-color: rgb(205, 196, 255)">
+    <h2 style="color: rgb(139, 91, 19); text-align: center">User Info Form</h2>
+</head>
+<body>
+
+  <form target="_blank" action="submit.html" method="post">
+         <label for="Full Name">Full Name:</label>
+         <input type="text" id="Full Name" name="Full Name" placeholder="Enter full Name" required maxlength="49"><br><br>
+             <label for="age">Age:</label>
+    <input type="number" id="age" name="age" min="0" max="120" step="1" required><br><br>
+Gender:
+    <input type="radio" name="gender" id="male"> Male
+    <input type="radio" name="gender" id="female"> Female
+    <input type="radio" name="gender" id="other"> Other<br><br>
+
+    Hobbies:<br>
+    <input type="checkbox" name="hobbies" id="reading"> Reading
+    <input type="checkbox" name="hobbies" id="sports"> Sports
+    <input type="checkbox" name="hobbies" id="music"> Music<br><br>
+        <label for="Country">Country:</label>
+    <select id="Country" name="Country">
+      <option value="" disabled selected>Select your country</option>
+      <option value="Italy">Italy</option>
+      <option value="Switerzland">Switerzland</option>
+      <option value="India">India</option>
+    </select><br><br>
+    <label for="cmnts">Short Bio:</label><br />
+<textarea
+  id="cmnts" name="cmnts" rows="5" cols="30" maxlength="500" placeholder="Enter a short bio"
+  style="width: 300px; padding: 8px; font-family: Arial, sans-serif; font-size: 14px; resize: vertical;"
+></textarea><br />
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" placeholder="example@mail.com" required 
+           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+  <!-- Password Field -->
+  <label for="password">Password:</label><br />
+  <input
+    type="password"
+    id="password"
+    name="password"
+    minlength="6"
+    maxlength="20"
+    required
+    placeholder="Enter your password"
+  ><br><br>
+
+  <!-- Date of Birth Field -->
+  <label for="dob">Date of Birth:</label><br />
+  <input
+    type="date"
+    id="dob"
+    name="dob"
+    min="1990-01-01"
+    max="2025-06-10"
+    required
+  ><br><br>
+
+  <!-- Submit Button -->
+  <input
+    type="submit"
+    value="Submit"
+  >
+</form>
+
+
+
+
