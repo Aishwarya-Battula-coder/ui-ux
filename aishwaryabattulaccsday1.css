@@ -1,0 +1,114 @@
+/* 1. Universal Selector */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f5f5f5;
+}
+
+/* 2. body selector */
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* 3. ID Selector */
+#container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  border: 2px solid hsl(210, 50%, 60%);
+}
+
+/* 4. .highlight */
+.highlight {
+  background-color: #ffe0b3;
+}
+
+/* 5. Group Selector */
+h1, h2, .title {
+  text-align: center;
+  color: hsl(210, 100%, 30%);
+}
+
+/* 6. Descendant Selector */
+section p {
+  color: navy;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+}
+
+/* 7. Attribute Selector */
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #aaa;
+  width: 60%;
+  display: block;
+  margin: 10px auto;
+}
+
+/* 8. Attribute starts with (optional link example) */
+a[href^="https"] {
+  color: green;
+  text-decoration: none;
+}
+
+/* 9. Hover pseudo-class */
+.skill:hover {
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+/* 10. Focus pseudo-class */
+input:focus {
+  outline: 2px solid blue;
+}
+
+/* 11. First child selector */
+ul li:first-child {
+  color: rgb(0, 123, 255);
+}
+
+/* 12. ::first-line pseudo-element */
+.about::first-line {
+  font-weight: bold;
+}
+
+/* 13. ::first-letter pseudo-element */
+.name::first-letter {
+  font-size: 200%;
+  color: #ff6600;
+}
+
+/* Text & Font Styling */
+h1 {
+  font-size: 2.5em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 2px gray;
+}
+h2 {
+  font-size: 1.8em;
+  text-decoration: underline;
+}
+.title {
+  font-style: italic;
+}
+.skill {
+  font-weight: bold;
+}
+
+/* 14. Specificity: Override with .name, then ID, then inline style */
+.name {
+  color: green; /* overridden by below */
+}
+#container .name {
+  color: blue !important; /* overridden by inline style */
+}
+
+/* Footer with rgba */
+footer {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  text-align: center;
+}
