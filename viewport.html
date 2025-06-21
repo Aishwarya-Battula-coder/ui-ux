@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profile</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      padding: 20px;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    .profile {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      margin-right: 20px;
+    }
+
+    .bio {
+      max-width: 500px;
+    }
+
+    .sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .box {
+      flex: 1 1 250px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      min-width: 200px;
+      text-align: center;
+    }
+
+    
+    @media (max-width: 480px) {
+      body {
+        font-size: 1.2em;
+      }
+      .profile {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .sections {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .box {
+        width: 100%;
+      }
+    }
+
+    
+    @media (max-width: 768px) {
+      .sections {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+      }
+      .sections .box:nth-child(3) {
+        grid-column: span 2;
+      }
+      header h1 {
+        font-size: 2.2em;
+      }
+    }
+
+    
+    @media (min-width: 1024px) {
+      .profile {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0 100px;
+      }
+      .sections {
+        flex-wrap: nowrap;
+        justify-content: space-evenly;
+      }
+      .box {
+        max-width: 300px;
+      }
+    }
+
+   
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .profile img {
+        float: left;
+        margin-right: 15px;
+        width: 100px;
+        height: 100px;
+      }
+      .bio {
+        overflow: hidden;
+      }
+      .sections .box:first-child {
+        background-color: #eef7ff;
+      }
+    }
+
+   
+    @media (min-width: 1200px) and (orientation: landscape) {
+      .container {
+        max-width: 1140px;
+        margin: auto;
+      }
+      .sections {
+        gap: 30px;
+      }
+      nav {
+        background: #333;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+
+    
+    @media (max-width: 600px) and (orientation: portrait) {
+      body {
+        background-color: lightyellow;
+      }
+      .sections {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+      }
+    }
+
+   
+    @media (max-width: 1024px) and (orientation: portrait) {
+      body {
+        background-color: lightyellow;
+      }
+    }
+
+    
+    @media (min-width: 992px) and (max-width: 1199px) {
+      .profile {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 20px;
+      }
+      .sections {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+      }
+    }
+
+    
+    @media (max-width: 600px) and (orientation: portrait) {
+      .profile img {
+        display: none;
+      }
+      .bio {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>Navigation Bar</nav>
+    <header>
+      <h1>My Profile</h1>
+    </header>
+
+    <div class="profile">
+      <img src="https://picsum.photos/150" alt="Profile Picture" />
+      <div class="bio">
+        <p>Hello! I'm an enthusatic developer  learning creative digital experiences.</p>
+      </div>
+    </div>
+
+    <div class="sections">
+      <div class="box">💻 <h3>Skills</h3> HTML, CSS, JavaScript</div>
+      <div class="box">📁 <h3>Projects</h3> Banking, E-Commerce, Healthcare</div>
+      <div class="box">📞 <h3>Contact</h3> Email: ash@mail.com</div>
+    </div>
+  </div>
+</body>
+</html>

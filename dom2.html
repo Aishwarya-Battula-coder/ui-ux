@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DOM Tasks</title>
+  <style>
+    .colorBox {
+      padding: 10px;
+      margin: 5px;
+      display: inline-block;
+      color: white;
+      width: 80px;
+      text-align: center;
+    }
+    #focusInput:focus {
+      border: 2px solid green;
+    }
+    #dropArea {
+      margin-top: 20px;
+      padding: 20px;
+      width: 200px;
+      height: 100px;
+      border: 2px dashed #ccc;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <h1 id="main-title">Welcome!</h1>
+  <p class="desc">This is a description.</p>
+  <input type="text" id="nameInput" value="Student">
+  <button id="changeBtn">Change Text</button>
+
+  
+  <div class="colorBox">Red</div>
+  <div class="colorBox">Green</div>
+  <div class="colorBox">Blue</div>
+
+  
+  <br><br>
+  <input type="text" id="focusInput" placeholder="Click button to focus">
+  <button id="focusBtn">Focus Input</button>
+
+  
+  <br><br>
+  <button id="clickMe">Click Me</button>
+
+  
+  <br><br>
+  <div id="dragTarget" draggable="true" style="background: lightblue; width: 100px; padding: 10px; text-align: center;">Drag me</div>
+  <div id="dropArea">Drop here</div>
+
+  <script>
+    
+    document.getElementById("changeBtn").onclick = function () {
+      document.getElementById("main-title").innerText = "Hello DOM!";
+      document.querySelector(".desc").innerText = "You've updated the description.";
+      document.getElementById("nameInput").value = "Aishwarya"; // change to your name
+    };
+
+    
+    const boxes = document.getElementsByClassName("colorBox");
+    for (let i = 0; i < boxes.length; i++) {
+      boxes[i].style.backgroundColor = boxes[i].innerText.toLowerCase();
+    }
+
+    document.querySelectorAll(".colorBox").forEach((box) => {
+      box.style.border = "2px solid black";
+    });
+
+    
+    document.getElementById("focusBtn").addEventListener("click", function () {
+      document.getElementById("focusInput").focus();
+    });
+
+    
+    document.getElementById("clickMe").onclick = function () {
+      alert("Button clicked!");
+    };
+
+    
+    const dragTarget = document.getElementById("dragTarget");
+    const dropArea = document.getElementById("dropArea");
+
+    dragTarget.ondragstart = function (event) {
+      event.dataTransfer.setData("text", event.target.id);
+    };
+
+    dropArea.ondragover = function (event) {
+      event.preventDefault(); // Necessary to allow drop
+    };
+
+    dropArea.ondrop = function (event) {
+      event.preventDefault();
+      const data = event.dataTransfer.getData("text");
+      const draggedElement = document.getElementById(data);
+      dropArea.appendChild(draggedElement);
+      dropArea.innerText = "Dropped!";
+    };
+  </script>
+</body>
+</html>
