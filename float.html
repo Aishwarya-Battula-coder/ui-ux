@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Float Madness</title>
+  <style>
+   
+    body {
+      font-family: sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      margin-top: 50px;
+      color: #454545;
+    }
+
+    .card {
+      width: 30%;
+      margin: 1%;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 20px;
+      float: left;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .price {
+      font-size: 1.5em;
+      margin: 10px 0;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    button {
+      padding: 10px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+   
+    .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Flex pricing (Float) </h1>
+
+  
+
+  <div style="margin-bottom: 60px;">
+    <div class="card">
+      <h2>Basic</h2>
+      <div class="price">$9</div>
+      <ul>
+        <li>Feature A</li>
+        <li>Feature B</li>
+        <li>Feature C</li>
+      </ul>
+      <button>Subscribe</button>
+    </div>
+
+    <div class="card">
+      <h2>Pro</h2>
+      <div class="price">$29</div>
+      <ul>
+        <li>Basic feature</li>
+        <li>System Service</li>
+        <li>Settings</li>
+      </ul>
+      <button>Subscribe</button>
+    </div>
+
+    <div class="card">
+      <h2>Enterprise</h2>
+      <div class="price">$99</div>
+      <ul>
+        <li>Advance Features</li>
+        <li>Manager Service</li>
+        <li>Advance Settings</li>
+      </ul>
+      <button>Subscribe</button>
+    </div>
+
+    

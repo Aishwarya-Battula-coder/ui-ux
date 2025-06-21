@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grid News Page</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #b0a5a5;
+    }
+
+    header,
+    footer {
+      background-color: #434343;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .grid-container {
+      display: grid;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    
+    @media (min-width: 768px) {
+      .grid-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-areas:
+          "header   header   header"
+          "main     main     sidebar"
+          "article1 article2 article3"
+          "footer   footer   footer";
+      }
+
+      .main-article {
+        grid-area: main;
+        grid-column: span 2;
+      }
+
+      .sidebar {
+        grid-area: sidebar;
+        position: sticky;
+        top: 20px;
+        height: fit-content;
+      }
+
+      .article1 { grid-area: article1; }
+      .article2 { grid-area: article2; }
+      .article3 { grid-area: article3; }
+
+      .header { grid-area: header; }
+      .footer { grid-area: footer; }
+    }
+
+    
+    @media (max-width: 767px) {
+      .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "header"
+          "main"
+          "article1"
+          "article2"
+          "article3"
+          "sidebar"
+          "footer";
+      }
+
+      .main-article {
+        grid-column: span 1;
+      }
+
+      .sidebar {
+        order: 6;
+      }
+
+      .footer {
+        order: 7;
+      }
+    }
+
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+    }
+
+    .card h2 {
+      margin-top: 0;
+    }
+
+    .card p {
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="grid-container">
+
+   
+  <header class="header card">
+  <h1>Magazine News</h1>
+  <p>Daily News & Updates</p>
+</header>
+
+
+       <section class="card main-article">
+      <h2>Main Headline Article</h2>
+      <p>In desktop view, this is the featured article that fills two columns.  It draws attention to today's most significant story.</p>
+    </section>
+
+    
+    <section class="card article1">
+      <h2>Article One</h2>
+      <p>A brief synopsis of this news story.  To learn more, continue reading.</p>
+    </section>
+
+   
+    <section class="card article2">
+      <h2>Article Two</h2>
+      <p>Interesting things are happening in the world right now.  Keep yourself informed.</p>
+    </section>
+
+  
+    <section class="card article3">
+      <h2>Article Three</h2>
+      <p>Another enlightening article about current affairs and professional viewpoints.</p>
+    </section>
+
+    
+    <aside class="card sidebar">
+      <h2>Sidebar</h2>
+      <p>Updates, advertisements, and links are available here.  clings to the side of bigger displays..</p>
+    </aside>
+
+    
+    <footer class="card footer">
+      <p>&copy; 2025 Magazine News. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+</body>
+</html>
